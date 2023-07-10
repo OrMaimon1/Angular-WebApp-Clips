@@ -8,12 +8,12 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  constructor(public modal : ModalService){
+  constructor(public modal: ModalService) {
 
   }
 
-  openModal($event : Event){
-      $event.preventDefault();
-      this.modal.toggleModal();
+  openModal($event: Event) {
+    $event.preventDefault();
+    this.modal.toggleModal('auth');
   }
 }
