@@ -10,6 +10,7 @@ interface IModal {
 })
 export class ModalService {
   private modals: IModal[] = []
+
   constructor() { }
 
   register(id: string) {
@@ -17,7 +18,10 @@ export class ModalService {
       id,
       visable: false
     })
-    console.log(this.modals)
+  }
+
+  unregister(id: string) {
+    this.modals = this.modals.filter(element => element.id !== id)
   }
 
   isModalOpen(id: string): boolean {
