@@ -21,8 +21,6 @@ export class TabsContainerComponent {
     }
   }
 
-
-
   selectTab(tab: TabComponent) {
     this.tabs?.forEach(tab => { tab.active = false })
 
