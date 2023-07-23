@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -8,7 +9,9 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  constructor(public modal: ModalService) {
+
+
+  constructor(public modal: ModalService, public auth: AuthService) {
 
   }
 
