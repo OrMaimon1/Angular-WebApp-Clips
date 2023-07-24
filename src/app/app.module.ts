@@ -11,6 +11,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { PictureModule } from './picture/picture.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AboutComponent } from './about/about.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    PictureModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
