@@ -12,13 +12,15 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PictureModule } from './picture/picture.module';
+import { PicComponent } from './pic/pic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    PicComponent
   ],
   imports: [
     BrowserModule,
