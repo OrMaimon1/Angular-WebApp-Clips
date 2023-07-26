@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+
 
 @Component({
   selector: 'app-pic',
@@ -10,6 +11,8 @@ export class PicComponent {
   id = ''
 
   constructor(public route: ActivatedRoute) {
-    this.id = this.route.snapshot.params.id;
+    this.route.params.subscribe((params: Params) => {
+      this.id = params.id
+    })
   }
 }
