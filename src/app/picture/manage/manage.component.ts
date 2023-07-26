@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ManageComponent {
 
+  constructor() {
+
+  }
+  ngOnInit(): void {
+  }
+
 }

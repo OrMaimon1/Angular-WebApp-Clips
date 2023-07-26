@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 import { AuthService } from '../services/auth.service';
 
-
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
