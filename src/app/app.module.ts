@@ -14,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { PictureModule } from './picture/picture.module';
 import { PicComponent } from './pic/pic.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AngularFirestoreModule,
     PictureModule,
     AppRoutingModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
