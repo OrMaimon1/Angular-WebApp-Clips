@@ -8,6 +8,7 @@ import { TabComponent } from './tab/tab.component';
 import { InputComponent } from './input/input.component';
 import { provideEnvironmentNgxMask, NgxMaskDirective } from 'ngx-mask';
 import { AlertComponent } from './alert/alert.component';
+import { EventBlockerDirective } from './directive/event-blocker.directive';
 //import { ModalService } from '../services/modal.service';
 
 
@@ -18,7 +19,8 @@ import { AlertComponent } from './alert/alert.component';
     TabsContainerComponent,
     TabComponent,
     InputComponent,
-    AlertComponent
+    AlertComponent,
+    EventBlockerDirective
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,7 @@ import { AlertComponent } from './alert/alert.component';
     TabComponent,
     InputComponent,
     AlertComponent,
+    EventBlockerDirective,
   ],
   providers: [provideEnvironmentNgxMask()],
   //providers: [ModalService]
