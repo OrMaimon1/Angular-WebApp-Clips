@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/compat/firestore';
 import IPic from '../models/pic.model';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class PicService {
     this.picsCollection = db.collection('pics')
   }
 
-  async createPics(data: IPic) {
-    await this.picsCollection.add(data)
+  createPics(data: IPic): Promise<DocumentReference<IPic>> {
+    return this.picsCollection.add(data)
   }
 }
