@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { PicService } from 'src/app/services/pic.service';
 import IPic from 'src/app/models/pic.model';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-manage',
@@ -13,7 +14,8 @@ export class ManageComponent {
 
   pictureOrder = '1'
   pics: IPic[] = []
-  constructor(private router: Router, private route: ActivatedRoute, private picService: PicService) {
+  activePic: IPic | null = null
+  constructor(private router: Router, private route: ActivatedRoute, private picService: PicService, private modal: ModalService) {
   }
 
   ngOnInit(): void {
@@ -43,4 +45,9 @@ export class ManageComponent {
     })
   }
 
+  openModal($event: Event, pic: IPic) {
+    $event.preventDefault()
+    this.activePic = pic
+    this.modal.toggleModal('editPic')
+  }
 }
