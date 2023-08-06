@@ -85,7 +85,8 @@ export class UploadComponent implements OnDestroy {
           displayName: this.user?.displayName as string,
           title: this.title.value,
           fileName: `${picFileName}.jpg`,
-          url
+          url,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }
         const picDocRef = await this.picService.createPics(pic)
 
