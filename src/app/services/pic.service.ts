@@ -33,4 +33,10 @@ export class PicService {
       map(snapshot => (snapshot as QuerySnapshot<IPic>).docs)
     )
   }
+
+  updatePic(id: string, title: string) {
+    return this.picsCollection.doc(id).update({
+      title
+    })
+  }
 }

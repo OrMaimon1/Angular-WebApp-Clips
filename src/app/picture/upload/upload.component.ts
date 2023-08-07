@@ -19,7 +19,7 @@ export class UploadComponent implements OnDestroy {
   file: File | null = null
   showAlert = false
   alertColor = 'blue'
-  alertMsg = 'Plaese wait! your Picture is uploading'
+  alertMsg = 'Please wait! your Picture is uploading'
   inSubmission = false
   precentage = 0
   showPrecent = false
