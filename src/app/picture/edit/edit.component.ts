@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnDestroy, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 import IPic from 'src/app/models/pic.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PicService } from 'src/app/services/pic.service';
+
 
 @Component({
   selector: 'app-edit',
@@ -18,6 +19,7 @@ export class EditComponent implements OnInit, OnDestroy, OnChanges {
   showAlert = false
   alertColor = 'blue'
   alertMsg = 'Please wait! Picture is updating'
+  @Output() update = new EventEmitter()
 
   picID = new FormControl('', {
     nonNullable: true
@@ -46,11 +48,16 @@ export class EditComponent implements OnInit, OnDestroy, OnChanges {
     if (!this.activePic) {
       return
     }
+    this.inSubmission = false
+    this.showAlert = false
     this.picID.setValue(this.activePic.docID || '')
     this.title.setValue(this.activePic.title)
   }
 
   async submit() {
+    if (!this.activePic) {
+      return
+    }
     this.inSubmission = true
     this.showAlert = true
     this.alertColor = 'blue'
@@ -64,6 +71,8 @@ export class EditComponent implements OnInit, OnDestroy, OnChanges {
       this.alertMsg = 'something went wrong. PLease try again later'
       return
     }
+    this.activePic.title = this.title.value
+    this.update.emit(this.activePic)
     this.inSubmission = false
     this.alertColor = 'green'
     this.alertMsg = 'Success!'
